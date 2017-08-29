@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "teamwork-data",
+  "private_key_id": "adef238d5e2817da86857148ba562bb7cafcb444",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCPoG8V1i8GXW/q\nUeD253EBzFhhsaBTHVXj7WExddtIRCemSUz+xcCEPla6kUlrLXzI5X8wYMXYQ0Lf\nuvQGXpimS95bWL6Jk5zH+p6nErTusSUDEBQuimn/v26/A6JANAgv04jGVVMNn9RW\nfVkXdTgl8W8zk2iRXkEMR6JNxtnIapaK3ieBHaEd/oNc5dQUe7YXMsW5uM5icW5j\nsdn9hNpL6QGwXrgzJxbSDn0FS0bknxNnrziCwHfHWJ0BHjUXtIfhTrrL0jxTPJRr\nb6OtPA06xuAa0CWw/j5lVHiFRXTJum/7bv2neBiYvgUM2/JVzOK5IIGL0zSb/sp0\nxsvRPiRVAgMBAAECggEAKTVjWfUTlfRuHWFztfOusVDjlNglg2NZ1uUva0UA7wmb\nBLNoU3sCow7NzIbN9WHeOTfbl9JUQZn+0Hlv9Xnju2buO/BI7uk65QfLyGzuG8QY\ntfnBiJ7vDdFroYOV5GzpYmuDhUBK7ZBLmKsrSjc4Lm7ItJgZOwg7ip3s+/rPVpiM\nPDeP0thxcJbwmWLmLTr/ygc7ngTsTCwA5fYl8iJXcC6SiuAcV8L7zBo56Sl9bxe5\nAvu2kZwW5UCtAFbhMf81IzKqi+iis85cqxeSaaZGnvfGCKZIgU5QaQGHxAxjoCcS\nrEbDgCYR4ofekq7v1Ye1nIRvB2HsRhe3kqfZFkkz2wKBgQDKH0cYPcf/apnBWbnY\nwiHLMHIP6PYPg1IjK1HnwxZtvoXvFxwhlPSQTXTS5ob76zTYcYQPueaNZn0SC4DR\noRbWeakxxHM0hADZtD8Ut3HfRI82398i9qJ0F3qmuzyKMvnQyAMQIwWAJLid19LT\nzSdKa6n25xKQT8Gxop0LnRyIywKBgQC16XOzxmJITQAr5QXFlWL20gt6n4DCOC1k\nAz5eCZsbFTf1lj/NHJb+JbT7WIHVGxFd/SZWzc/CUeMyj3QMM/X170bdFWe/wy8B\nyKkdWdxIer/D2rr4/8t+ggW6tGty50JNX3/V0NSsf8mQ6hg0MeNQdLMLMa09MDMi\nvadowYcDXwKBgQDF6MhpYR0y6INzAlNqffQvC9mz4G0HFZPYofNKFwkgHjzwtlUy\nQLMTlPQ+CcHEbDNLeCNSbrnkXKU8hQz2tmAxU+EqvOv9UP+wK8DUnScf8fa1SZIo\nnwzE1bSgC5gkzfM0zpPJOjGJnusyiwCBqVC+mxtKiknwClhjghF6LLWi7wKBgEry\ncNn7fRieqNhs1jDueESKi3Is7waV0JWpBHQH7yB8YH7NNWITSl5ROLxpXaxoJ4Ka\nvsX6q4M666k0EzLH4ak+uOpzXDhUeTR58LsH/8rYz9ModeoKsVNgzG180dwYTWfF\nVczI6iZby7bpy6kNeML4IaAWCnLwPdEtZCCzwyVvAoGBAKbTdcJEz3mUan09ulCq\npeW3MoFPVeUyntoJiKTJWftmOT1akrvF6nAj4yk5D8zal/ghm4bk+YbNL2ZZ02RR\nuyNSDWUGfHOlEgFsDnx8v0rMIasMsM52W0V4kt5aPcWxjiYFs4OJ7IzplhwSu7uT\nAnXtBvovhxJe0g5DwlY9vpVp\n-----END PRIVATE KEY-----\n",
+  "client_email": "teamwork-timelog@teamwork-data.iam.gserviceaccount.com",
+  "client_id": "116488618914739582019",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/teamwork-timelog%40teamwork-data.iam.gserviceaccount.com"
+}

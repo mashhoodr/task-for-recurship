@@ -1,0 +1,8 @@
+{
+  "name": "sample-task-for-recurship",
+  "dependencies": {
+    "@google-cloud/bigquery": "^0.9.6",
+    "async": "^2.5.0",
+    "split-array": "^1.0.1"
+  }
+}
