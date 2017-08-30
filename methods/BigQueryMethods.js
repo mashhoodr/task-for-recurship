@@ -15,32 +15,78 @@ var bigquery = BigQuery({
 exports.storeDataInBigQuery = function (records, callback) {
 
 
-    //recommended number of rows per request
-    var _arr = splitArray(records, 500);
-    async.each(_arr, function (rows, cb) {
-        bigquery
-            .dataset('teamwork_sohaib')
-            .table('timeEntries')
-            .insert(rows)
-            .then(function (insertErrors) {
-                console.log('Rows saved in BigQuery during current request : ' +rows.length);
+    async.waterfall([
+        function(nextTask){
+            //Delete all previous records
 
-                if (insertErrors && insertErrors.length > 0) {
-                    console.log('Insert errors:');
-                    insertErrors.forEach(function (err) {
-                        console.error(err)
+            // The SQL query to run
+            var sqlQuery = 'DELETE FROM teamwork_sohaib.timeEntries WHERE TRUE';
+
+            // Query options list: https://cloud.google.com/bigquery/docs/reference/v2/jobs/query
+            var options = {
+                query: sqlQuery,
+                useLegacySql: false // Use standard SQL syntax for queries.
+            };
+
+            // Runs the query
+            bigquery
+                .query(options)
+                .then(function(results){
+                    nextTask();
+                })
+                .catch(function (err) {
+                    console.error('ERROR:', err);
+                    nextTask(err);
+                });
+        },
+        function(nextTask){
+            //Add New Records
+
+            //recommended number of rows per request
+            var _arr = splitArray(records, 500);
+            async.each(_arr, function (rows, cb) {
+                bigquery
+                    .dataset('teamwork_sohaib')
+                    .table('timeEntries')
+                    .insert(rows)
+                    .then(function (insertErrors) {
+                        console.log('Rows saved in BigQuery during current request : ' +rows.length);
+
+                        if (insertErrors && insertErrors.length > 0) {
+                            console.log('Insert errors:');
+                            insertErrors.forEach(function (err) {
+                                console.error(err)
+                            });
+                        }
+                        cb();
+                    })
+                    .catch(function (err) {
+                        console.error('ERROR:', err);
+                        cb();
                     });
+
+            }, function (err) {
+                if (err)
+                {
+                    nextTask(err);
                 }
-                cb();
-
-            })
-            .catch(function (err) {
-                console.error('ERROR:', err);
-                cb();
+                else
+                {
+                    nextTask(null);
+                }
             });
+        }
 
-    }, function (err) {
-        callback('Records saved in BigQuery successfully');
+    ], function nextTask(err){
+        if (err)
+        {
+            callback(err);
+        }
+        else
+        {
+            callback(null, 'Records saved in BigQuery successfully');
+        }
+
     });
 
 
