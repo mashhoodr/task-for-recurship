@@ -62,7 +62,7 @@ exports.storeDataInBigQuery = function (records, callback) {
                     })
                     .catch(function (err) {
                         console.error('ERROR:', err);
-                        cb();
+                        cb(err);
                     });
 
             }, function (err) {
@@ -72,19 +72,20 @@ exports.storeDataInBigQuery = function (records, callback) {
                 }
                 else
                 {
-                    nextTask(null);
+                    nextTask();
                 }
             });
         }
 
     ], function nextTask(err){
+
         if (err)
         {
-            callback(err);
+            callback(null, err);
         }
         else
         {
-            callback(null, 'Records saved in BigQuery successfully');
+            callback('Records saved in BigQuery successfully');
         }
 
     });

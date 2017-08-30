@@ -11,7 +11,7 @@ TeamWorkMethods.fetchData(function(records){
     {
         console.log('Total reformatted records : '+ reformattedRecords.length);
 
-        BigQueryMethods.storeDataInBigQuery([], function(success, err)
+        BigQueryMethods.storeDataInBigQuery(reformattedRecords, function(success, err)
         {
             if (err)
             {
