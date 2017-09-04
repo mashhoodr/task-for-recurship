@@ -1,6 +1,9 @@
 /**
  * Created by sohaibnehal on 25/08/2017.
  */
+
+//A -1 dont see much point of this class, should have been part of the service
+
 exports.reformatData = function(records, callback){
 
     var _reformattedRecords = reformatData(records);

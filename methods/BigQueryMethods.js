@@ -3,7 +3,8 @@
  */
 var config = require('../config/config');
 var splitArray = require('split-array');
-var async = require("async");
+var async = require("async"); //A -2 for not using nodes build in async
+//A -1 for using quotes inconsistency
 
 // Imports the Google Cloud client library
 var BigQuery = require('@google-cloud/bigquery');
@@ -12,8 +13,8 @@ var project_id = config.BigQueryCreds.projectId;
 var bigquery = BigQuery({
     projectId: project_id
 });
-exports.storeDataInBigQuery = function (records, callback) {
 
+exports.storeDataInBigQuery = function (records, callback) {
 
     async.waterfall([
         function(nextTask){

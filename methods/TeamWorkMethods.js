@@ -9,8 +9,10 @@ var url = config.TeamworkCreds.url;
 var base64 = config.TeamworkCreds.base64;
 
 
-var request = require('request');
+var request = require('request'); //A request-promise?
 
+
+//A -5 who on earth uses callbacks still?
 exports.fetchData = function(callback)
 {
     fetchDataFromTeamwork(function(records)
@@ -31,6 +33,7 @@ var fetchDataFromTeamwork = function(callback)
         {
             _headers = response.headers;
             //fetching paginated data
+            //A -1 probably should add a check for x-page here
             if (parseInt(_headers['x-page']) <= parseInt(_headers['x-pages']))
             {
                 _record = JSON.parse(response.body);
@@ -93,6 +96,7 @@ function sendResponse(done)
 
 }
 
+//A -2 should have used momentjs
 var _getDateOfOneWeekAgo = function(){
     var oneWeekAgo = new Date();
     oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
